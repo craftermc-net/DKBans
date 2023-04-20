@@ -128,14 +128,6 @@ public class BukkitPlayerListener implements Listener {
                 if(BanSystem.getInstance().getUpdateChecker().hasNewVersion()){
                     event.getPlayer().sendMessage(Messages.PREFIX_BAN + "§7New version available §e" + BanSystem.getInstance().getUpdateChecker().getLatestVersionString());
                 }
-                BaseComponent[] messages = BanSystem.getInstance().getUpdateChecker().getEndOfLifeMessage();
-                if(messages != null){
-                    event.getPlayer().sendMessage(Messages.PREFIX_BAN+" §7------------------------");
-                    for (BaseComponent message : messages) {
-                        BukkitBanSystemBootstrap.getInstance().sendTextComponent(event.getPlayer(),message);
-                    }
-                    event.getPlayer().sendMessage(Messages.PREFIX_BAN+" §7------------------------");
-                }
             }
         });
     }

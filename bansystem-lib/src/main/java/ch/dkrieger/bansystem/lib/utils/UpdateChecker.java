@@ -39,13 +39,11 @@ public class UpdateChecker {
     private String latestVersionString;
     private UpdateCheckResult updateCheckResult;
 
-    private BaseComponent[] endOfLifeMessage;
-
     public UpdateChecker(int resourceId) throws MalformedURLException {
         this.resourceId = resourceId;
         this.resourceURL = new URL("https://api.spigotmc.org/legacy/update.php?resource=" + resourceId);
         this.currentVersionString = BanSystem.getInstance().getVersion();
-        this.loadEndOfLive();
+
     }
 
     public boolean hasNewVersion() {
@@ -92,19 +90,6 @@ public class UpdateChecker {
         } catch (Exception exception) {
             return null;
         }
-    }
-
-    public BaseComponent[] getEndOfLifeMessage(){
-        return endOfLifeMessage;
-    }
-
-    public void loadEndOfLive(){
-        try {
-            URLConnection urlConnection = new URL("https://content.pretronic.net/dkplugins-legacy/dkbans.txt").openConnection();
-            String result = new BufferedReader(new InputStreamReader(urlConnection.getInputStream())).lines()
-                    .parallel().collect(Collectors.joining("\n"));
-            this.endOfLifeMessage = ComponentSerializer.parse(result);
-        } catch (Exception ignored) {}
     }
 
     public enum UpdateCheckResult {
