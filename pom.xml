@@ -33,7 +33,7 @@
         <module>bansystem-lib</module>
         <module>bansystem-bungeecord</module>
         <module>bansystem-bukkit</module>
-        <module>bansystem-extension-banbroadcast</module>
+        <!--<module>bansystem-extension-banbroadcast</module>
         <module>bansystem-extension-reportreward</module>
         <module>bansystem-extension-consolecommand</module>
         <module>bansystem-extension-restapi</module>
@@ -44,7 +44,7 @@
         <module>bansystem-extension-motdmanager</module>
         <module>bansystem-extension-offlinepermissionhook</module>
         <module>bansystem-sponge</module>
-        <module>bansystem-extension-commandonban</module>
+        <module>bansystem-extension-commandonban</module>-->
     </modules>
 
     <licenses>

@@ -179,7 +179,6 @@ public class BanSystem {
         if(this.config.commandNotify) getCommandManager().registerCommand(new NotifyCommand());
         if(this.config.commandFallbackKick) getCommandManager().registerCommand(new FallbackKickCommand());
 
-        getCommandManager().registerCommand(new DKBansCommand());
         getCommandManager().registerCommand(new BroadcastJumpCommand());
 
         if(config.autobroadcastEnabled)
